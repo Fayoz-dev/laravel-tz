@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
+            $table -> foreignId('user_id')->constrained()->onDelete('cascade');
+            $table -> text('subject');
+            $table -> text('message');
+            $table -> text('file_url');
             $table->timestamps();
         });
     }
